@@ -1,0 +1,88 @@
+{
+  "company": {
+    "name": "Baumgratz Code",
+    "tagline": "Tecnologia enterprise para decisões assistenciais orientadas por dados",
+    "description": "Empresa de tecnologia especializada em soluções digitais com forte aplicação de IA, automação e análise avançada de dados para o setor de saúde.",
+    "icons": [
+      "SaaS",
+      "Análise de Dados",
+      "Redução de Custos"
+    ]
+  },
+  "product": {
+    "name": "ARGUS Watch",
+    "executiveSummary": "Plataforma corporativa de monitoramento e gestão de riscos assistenciais com IA para prevenção e controle de infecções, Segurança do Paciente, apoio a CCIH e NSP, indicadores e decisões preventivas.",
+    "audience": [
+      "CCIH",
+      "NSP"
+    ],
+    "valuePillars": [
+      "Visão data-driven",
+      "IA preditiva",
+      "Redução de riscos assistenciais"
+    ]
+  },
+  "features": {
+    "clinical": [
+      "Atendimentos e Sinais Vitais (filtros e alertas automáticos)",
+      "Internações e Dispositivos (movimentação, tempo de permanência e dispositivos invasivos)",
+      "Cirurgias (classificação de risco e controle de ISC)",
+      "Laboratório e Exames (culturas, antibiogramas e histórico microbiológico)",
+      "Gestão de Antimicrobianos (monitoramento de prescrições)"
+    ],
+    "ccihNspHygiene": [
+      "Controle de Infecções (IRAS, PAV, ITU, ICS, isolamentos por contato/gotícula/aerossol)",
+      "Segurança do Paciente (registro de eventos adversos com upload e análise de causa raiz)",
+      "Bundles (PAV, ITU, SAPS3, SIRS)",
+      "Higienização e Manutenção (ambientes, planos de limpeza e checklists)",
+      "Produtos Químicos/FISPQ (GHS, toxicologia, EPIs e alerta de incompatibilidade)"
+    ],
+    "techInfra": [
+      "Gestão de ficheiros com upload em lote vinculado automaticamente aos eventos",
+      "Notificações e relatórios automáticos por e-mail",
+      "Segurança da Informação com autenticação, perfis e logs de auditoria"
+    ]
+  },
+  "methodology": {
+    "name": "AGF — Argus Gate Framework",
+    "principles": [
+      "Visão Contínua",
+      "Decisão Controlada",
+      "Avanço Consciente"
+    ],
+    "gates": [
+      "Gate 1 – Vendas",
+      "Gate 2 – Arquitetura",
+      "Gate 3 – Transição Interna",
+      "Gate 4 – Onboarding",
+      "Gate 5 – Implantação",
+      "Gate 6 – Suporte"
+    ]
+  },
+  "pricing": {
+    "ccih": {
+      "monthly": "R$ 1.282,49",
+      "perCnpj": "R$ 360,62",
+      "setup": "Sem custo",
+      "tokensRule": "R$ 2,00 por milhão de tokens excedentes à franquia de 1.000.000 tokens"
+    },
+    "nsp": {
+      "monthly": "R$ 912,75",
+      "perCnpj": "R$ 228,19",
+      "setup": "Sem custo",
+      "tokensRule": "R$ 2,00 por milhão de tokens excedentes à franquia de 1.000.000 tokens"
+    },
+    "tokensReference": "1.000.000 tokens equivalem aproximadamente a 700.000 a 750.000 palavras em português.",
+    "generalTerms": [
+      "Faturamento: envio de nota e boleto bancário",
+      "Validade da proposta: 15 dias",
+      "Reajuste anual seguindo IPCA"
+    ]
+  },
+  "contact": {
+    "phone": "(32) 99106-6642",
+    "email": "comercial@argusbc.com.br",
+    "whatsapp": "[PREENCHER: WhatsApp comercial]",
+    "address": "[PREENCHER: Endereço comercial]"
+  }
+}
