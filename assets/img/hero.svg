@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Placeholder Hero ARGUS Watch">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b2e4f"/>
+      <stop offset="100%" stop-color="#115f82"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1440" height="740" rx="24" fill="none" stroke="#12b0a8" stroke-width="8"/>
+  <text x="120" y="450" fill="#e9f8ff" font-size="56" font-family="Arial, sans-serif" font-weight="700">ARGUS Watch</text>
+  <text x="120" y="520" fill="#d5ebf8" font-size="34" font-family="Arial, sans-serif">Placeholder de imagem para hero institucional</text>
+</svg>
