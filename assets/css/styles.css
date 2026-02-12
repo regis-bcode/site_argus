@@ -1,4 +1,5 @@
 :root {
+  /* Base visual tokens (resolved merge-safe superset) */
   --bg: #ececeb;
   --surface: #f6f6f5;
   --line: #cfd1d4;
@@ -9,6 +10,16 @@
   --dark: #121316;
   --dark-2: #17191f;
   --radius: 16px;
+
+  /* Compatibility aliases from the other branch naming */
+  --surface-2: #e6e6e8;
+  --primary-2: var(--primary-strong);
+  --accent: var(--primary);
+  --accent-2: var(--primary-strong);
+  --violet: #9a4dff;
+  --white: #fff;
+  --border: #b8c8d3;
+  --shadow: 0 14px 42px rgba(2, 35, 61, 0.16);
 }
 
 * { box-sizing: border-box; }
