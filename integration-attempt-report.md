@@ -26,3 +26,9 @@ Branch analyzed: `work`
    - `assets/js/main.js`: preserve `BASE_PATH`/`href(path)` behavior for GitHub Pages.
    - `data/*.json` and `data/*.md`: preserve canonical source-of-truth content.
 4. Validate by running a local server (`python3 -m http.server 8080`) and quick manual checks.
+
+
+## Validation update (latest)
+- Checked unresolved merge entries with `git diff --name-only --diff-filter=U`: none found.
+- Searched conflict markers with `rg -n "<<<<<<<|=======|>>>>>>>" .`: none found in repository.
+- Current files `metodologia.html` and `assets/css/styles.css` are in the resolved form (no conflict markers), keeping the visible/non-clipped gate layout.
