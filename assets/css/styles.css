@@ -1,24 +1,17 @@
 :root {
-  /* Base visual tokens (resolved merge-safe superset) */
-  --bg: #ececeb;
-  --surface: #f6f6f5;
-  --line: #cfd1d4;
-  --text: #121418;
-  --muted: #6f7278;
-  --primary: #4f6ff2;
-  --primary-strong: #3f5fe6;
-  --dark: #121316;
-  --dark-2: #17191f;
-  --radius: 16px;
-
-  /* Compatibility aliases from the other branch naming */
+  --bg: #ececec;
+  --surface: #f7f7f8;
   --surface-2: #e6e6e8;
-  --primary-2: var(--primary-strong);
-  --accent: var(--primary);
-  --accent-2: var(--primary-strong);
+  --primary: #02233d;
+  --primary-2: #063a5b;
+  --accent: #1bc4e6;
+  --accent-2: #17d2ff;
   --violet: #9a4dff;
+  --text: #122738;
+  --muted: #546574;
   --white: #fff;
   --border: #b8c8d3;
+  --radius: 18px;
   --shadow: 0 14px 42px rgba(2, 35, 61, 0.16);
 }
 
