@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>[PREENCHER: https://dominio.com]/index.html</loc></url>
-  <url><loc>[PREENCHER: https://dominio.com]/produto.html</loc></url>
-  <url><loc>[PREENCHER: https://dominio.com]/funcionalidades.html</loc></url>
-  <url><loc>[PREENCHER: https://dominio.com]/metodologia.html</loc></url>
-  <url><loc>[PREENCHER: https://dominio.com]/investimento.html</loc></url>
-  <url><loc>[PREENCHER: https://dominio.com]/sobre.html</loc></url>
-  <url><loc>[PREENCHER: https://dominio.com]/contato.html</loc></url>
-  <url><loc>[PREENCHER: https://dominio.com]/privacidade.html</loc></url>
+  <url><loc>/index.html</loc></url>
+  <url><loc>/produto-watch.html</loc></url>
+  <url><loc>/solucoes.html</loc></url>
+  <url><loc>/como-funciona.html</loc></url>
+  <url><loc>/prova-de-valor.html</loc></url>
+  <url><loc>/para-quem.html</loc></url>
+  <url><loc>/investimento.html</loc></url>
+  <url><loc>/metodologia.html</loc></url>
+  <url><loc>/ecossistema.html</loc></url>
+  <url><loc>/sobre.html</loc></url>
+  <url><loc>/contato.html</loc></url>
+  <url><loc>/privacidade.html</loc></url>
+  <url><loc>/termos.html</loc></url>
 </urlset>

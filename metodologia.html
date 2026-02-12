@@ -1,11 +1,11 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Metodologia AGF | ARGUS Watch</title><meta name="description" content="AGF — Argus Gate Framework: princípios e gates de implantação."><meta property="og:image" content="assets/img/og-cover.svg"><link rel="stylesheet" href="assets/css/styles.css"></head><body>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Metodologia | ARGUS Watch</title><meta name="description" content="Implantação estruturada do ARGUS Watch."><link rel="stylesheet" href="assets/css/styles.css"></head><body><a class="skip-link" href="#conteudo">Pular para conteúdo</a>
 <header class="site-header">
   <div class="topbar">
     <div class="container topbar-wrap">
-      <span>Plataforma de inteligência para gestão de risco assistencial</span>
+      <span>Plataforma de governança para risco assistencial</span>
       <div class="topbar-links">
-        <a href="tel:+5532991066642">(32) 99106-6642</a>
-        <a href="mailto:comercial@argusbc.com.br">comercial@argusbc.com.br</a>
+        <a href="tel:+5532991066642" data-phone>(32) 99106-6642</a>
+        <a href="mailto:comercial@argusbc.com.br" data-email>comercial@argusbc.com.br</a>
       </div>
     </div>
   </div>
@@ -15,17 +15,38 @@
     </a>
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
     <nav class="nav-menu" aria-label="Menu principal">
-      <a data-href="/produto.html">Plataforma</a>
-      <a data-href="/funcionalidades.html">Soluções</a>
-      <a data-href="/metodologia.html">Metodologia</a>
+      <a data-href="/produto-watch.html">Produto</a>
+      <a data-href="/solucoes.html">Soluções</a>
+      <a data-href="/como-funciona.html">Como funciona</a>
+      <a data-href="/prova-de-valor.html">Prova de valor</a>
       <a data-href="/investimento.html">Investimento</a>
-      <a data-href="/sobre.html">Empresa</a>
-      <a data-href="/contato.html">Contato</a>
       <a data-href="/contato.html" class="btn nav-cta">Solicitar demonstração</a>
     </nav>
   </div>
 </header>
-<main class="container"><section class="hero"><h1>AGF — Argus Gate Framework</h1><p class="lead">Metodologia para condução segura da jornada comercial, técnica e operacional.</p><div data-icons></div></section>
-<section class="card"><h2>Princípios</h2><ul class="list-clean" data-principles></ul></section>
-<section><h2 class="section-title">Gates</h2><div class="timeline" data-gates></div></section></main>
-<footer class="site-footer"><div class="container footer-grid"><div><strong data-company-name></strong></div><div><a data-href="/investimento.html">Investimento</a></div><div><a href="mailto:comercial@argusbc.com.br" data-email></a></div></div></footer><button class="back-top">↑</button><script src="assets/js/main.js" defer></script><script>document.addEventListener('DOMContentLoaded',()=>{const t=document.querySelector('[data-gates]');if(t){fetch(window.siteUtils.href('/data/site.config.json')).then(r=>r.json()).then(c=>{t.innerHTML=c.methodology.gates.map(g=>`<article class="card"><h3>${g}</h3><p>Marco de controle para garantir evolução consistente entre planejamento, implantação e suporte.</p></article>`).join('');});}});</script></body></html>
+<main id="conteudo"><section class="page-hero"><div class="container"><p class="eyebrow">METODOLOGIA</p><h1>Implantação Estruturada</h1></div></section>
+<section><div class="container"><ol class="list-clean"><li>Diagnóstico inicial</li><li>Configuração e parametrização</li><li>Treinamento</li><li>Ativação operacional</li><li>Monitoramento assistido</li><li>Governança contínua</li></ol><p><strong>Prazo médio de implantação:</strong> variável conforme porte.</p></div></section></main><footer class="site-footer"><div class="container footer-grid">
+  <div>
+    <img data-src="/assets/img/logo-baumgratz.svg" alt="ARGUS" style="height:34px">
+    <p class="small" data-tagline>Tecnologia para governança de risco assistencial.</p>
+  </div>
+  <div>
+    <strong>Navegação</strong>
+    <p>
+      <a data-href="/produto-watch.html">Produto</a><br>
+      <a data-href="/solucoes.html">Soluções</a><br>
+      <a data-href="/ecossistema.html">Ecossistema</a><br>
+      <a data-href="/sobre.html">Empresa</a>
+    </p>
+  </div>
+  <div>
+    <strong>Institucional</strong>
+    <p>
+      <a data-href="/privacidade.html">Privacidade</a><br>
+      <a data-href="/termos.html">Termos de uso</a><br>
+      <a href="mailto:comercial@argusbc.com.br" data-email>comercial@argusbc.com.br</a>
+    </p>
+  </div>
+</div></footer>
+<button class="back-top" aria-label="Voltar ao topo">↑</button>
+<script src="assets/js/main.js" defer></script></body></html>
