@@ -24,6 +24,6 @@ O JavaScript implementa `BASE_PATH` + função `href(path)` para montar links in
 ## Checklist de go-live
 - Substituir placeholders `[PREENCHER: ...]`.
 - Inserir logos finais em `assets/img/`.
-- Trocar `assets/img/og-cover.svg` por arte final.
+- Trocar `assets/img/og-cover.svg` e `assets/img/hero.svg` pelas artes finais.
 - Revisar `sitemap.xml` e `robots.txt` com URL final.
 - Validar contatos comerciais e conteúdo jurídico da página de privacidade.

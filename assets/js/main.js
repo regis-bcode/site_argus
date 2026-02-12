@@ -11,8 +11,8 @@
 
   const href = (path) => {
     if (!path || /^(https?:|mailto:|tel:|#)/.test(path)) return path;
-    const clean = path.startsWith('/') ? path : `/${path}`;
-    return `${BASE_PATH}${clean}`;
+    const normalized = path.startsWith('/') ? path : `/${path}`;
+    return `${BASE_PATH}${normalized}`;
   };
 
   window.siteUtils = { BASE_PATH, href };
@@ -33,61 +33,79 @@
     });
   }
 
-  const backTop = document.querySelector('.back-top');
-  if (backTop) {
-    window.addEventListener('scroll', () => {
-      backTop.classList.toggle('show', window.scrollY > 300);
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
-    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  });
+
+  const sections = [...document.querySelectorAll('main section[id]')];
+  const links = [...document.querySelectorAll('.nav-menu a[href^="#"]')];
+  if (sections.length && links.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = `#${entry.target.id}`;
+        links.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === id));
+      });
+    }, { threshold: 0.45 });
+    sections.forEach((section) => observer.observe(section));
   }
 
   document.querySelectorAll('.faq-question').forEach((button) => {
     button.addEventListener('click', () => {
       const item = button.closest('.faq-item');
+      if (!item) return;
       const open = item.classList.toggle('open');
       button.setAttribute('aria-expanded', String(open));
     });
   });
 
-  const sections = [...document.querySelectorAll('main section[id]')];
-  const links = [...document.querySelectorAll('.nav-menu a[href^="#"], .nav-menu a[data-href]')];
-  if (sections.length) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const id = `#${entry.target.id}`;
-        links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === id));
-      });
-    }, { threshold: 0.35 });
-    sections.forEach((s) => obs.observe(s));
+  const backTop = document.querySelector('.back-top');
+  if (backTop) {
+    window.addEventListener('scroll', () => {
+      backTop.classList.toggle('show', window.scrollY > 320);
+    });
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 
   const form = document.querySelector('#contact-form');
   if (form) {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-      const name = form.querySelector('[name="nome"]').value.trim();
-      const company = form.querySelector('[name="empresa"]').value.trim();
-      const email = form.querySelector('[name="email"]').value.trim();
-      const message = form.querySelector('[name="mensagem"]').value.trim();
-      const notice = document.querySelector('.notice');
-      if (!name || !company || !email || !message) {
+      const payload = {
+        nome: form.querySelector('[name="nome"]')?.value.trim() || '',
+        empresa: form.querySelector('[name="empresa"]')?.value.trim() || '',
+        email: form.querySelector('[name="email"]')?.value.trim() || '',
+        mensagem: form.querySelector('[name="mensagem"]')?.value.trim() || '',
+      };
+      if (Object.values(payload).some((value) => !value)) {
         alert('Preencha todos os campos obrigatórios.');
         return;
       }
-      const body = encodeURIComponent(`Nome: ${name}\nEmpresa: ${company}\nE-mail: ${email}\n\nMensagem:\n${message}`);
-      const mailBtn = document.querySelector('#mailto-fallback');
-      mailBtn.href = `mailto:comercial@argusbc.com.br?subject=Contato comercial ARGUS Watch&body=${body}`;
+      const body = encodeURIComponent(
+        `Nome: ${payload.nome}\nEmpresa: ${payload.empresa}\nE-mail: ${payload.email}\n\nMensagem:\n${payload.mensagem}`,
+      );
+      const mailto = document.querySelector('#mailto-fallback');
+      if (mailto) {
+        mailto.href = `mailto:comercial@argusbc.com.br?subject=Contato comercial ARGUS Watch&body=${body}`;
+      }
+      const notice = document.querySelector('.notice');
       if (notice) notice.style.display = 'block';
     });
   }
 
   const fill = (selector, value) => {
-    document.querySelectorAll(selector).forEach((el) => { el.textContent = value; });
+    document.querySelectorAll(selector).forEach((el) => {
+      el.textContent = value;
+    });
   };
 
   fetch(href('/data/site.config.json'))
-    .then((r) => r.json())
+    .then((response) => response.json())
     .then((config) => {
       fill('[data-company-name]', config.company.name);
       fill('[data-tagline]', config.company.tagline);
@@ -97,23 +115,24 @@
       fill('[data-email]', config.contact.email);
 
       const iconContainer = document.querySelector('[data-icons]');
-      if (iconContainer) {
+      if (iconContainer && Array.isArray(config.company.icons)) {
         iconContainer.innerHTML = config.company.icons.map((icon) => `<span class="pill">${icon}</span>`).join('');
       }
 
-      const listMap = [
+      const listBindings = [
         ['[data-features-clinical]', config.features.clinical],
         ['[data-features-ccih]', config.features.ccihNspHygiene],
         ['[data-features-tech]', config.features.techInfra],
-        ['[data-principles]', config.methodology.principles],
         ['[data-terms]', config.pricing.generalTerms],
       ];
-      listMap.forEach(([selector, items]) => {
-        const el = document.querySelector(selector);
-        if (el && Array.isArray(items)) el.innerHTML = items.map((it) => `<li>${it}</li>`).join('');
+      listBindings.forEach(([selector, items]) => {
+        const container = document.querySelector(selector);
+        if (container && Array.isArray(items)) {
+          container.innerHTML = items.map((item) => `<li>${item}</li>`).join('');
+        }
       });
 
-      const priceFields = {
+      const prices = {
         '[data-ccih-monthly]': config.pricing.ccih.monthly,
         '[data-ccih-cnpj]': config.pricing.ccih.perCnpj,
         '[data-ccih-setup]': config.pricing.ccih.setup,
@@ -124,7 +143,9 @@
         '[data-nsp-tokens]': config.pricing.nsp.tokensRule,
         '[data-token-reference]': config.pricing.tokensReference,
       };
-      Object.entries(priceFields).forEach(([selector, value]) => fill(selector, value));
+      Object.entries(prices).forEach(([selector, value]) => fill(selector, value));
     })
-    .catch(() => console.warn('Não foi possível carregar site.config.json'));
+    .catch(() => {
+      console.warn('Não foi possível carregar data/site.config.json');
+    });
 })();
